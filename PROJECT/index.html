@@ -1,0 +1,340 @@
+<html>
+
+<head>
+    <title>LUON VUITUOI</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c56221915b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-2 menu">
+                    <a href="index.html"><img src="PICTURES/logo.png" alt="Hình ảnh logo"></a>
+                </div>
+
+
+                <div class="col-8 menu">
+                    <ul>
+                         <li class="tim"><img src="PICTURES/search.png"></li>
+                        <li>
+                            <div class="search">
+                                <form> <input type="text" id="myInput" name="search"
+                                        placeholder="Tìm kiếm sản phẩm..."><br> </form>
+                                <ul id="myUL">
+                                    <li><a href="CHITIET1.html">SƠ MI TAY NGẮN THẦN CỔ ĐÀI</a></li>
+                                    <li><a href="CHITIET2.html">ÁO KHOÁC VARSITY THẦN CỔ ĐẠI</a></li>
+                                    <li><a href="CHITIET3.html">SƠ MI CỔ LÃNH TỤ ĐƠN GIẢN M25</a></li>
+                                    <li><a href="CHITIET4.html">SƠ MI TAY NGẮN ĐƠN GIẢN Y NGUYÊN BẢN VER6</a></li>
+                                    <li><a href="CHITIET5.html">QUẦN DÀI JEAN SLIMFIT ĐƠN GIẢN THẦN CỔ ĐẠI VALKNUT
+                                            VER1</a></li>
+                                    <li><a href="CHITIET6.html">QUẦN SHORT TÂY NAM</a></li>
+                                    <li><a href="CHITIET7.html">QUẦN DÀI JEAN SLIMFIT ĐƠN GIẢN</a></li>
+                                    <li><a href="CHITIET8.html">QUẦN DÀI TÂY ĐƠN GIẢN M1</a></li>
+                                    <li><a href="CHITIETNU1.html">ÁO LEN</a></li>
+                                    <li><a href="CHITIETNU2.html">ÁO THUN NỮ</a></li>
+                                    <li><a href="CHITIETNU3.html">ÁO THUN NỮ TRÀ SỮA</a></li>
+                                    <li><a href="CHITIETNU4.html">SƠ MI NỮ</a></li>
+                                    <li><a href="CHITIETNU5.html">QUẦN JEANS NỮ</a></li>
+                                    <li><a href="CHITIETNU6.html">CHÂN VÁY NỮ</a></li>
+                                    <li><a href="CHITIETNU7.html">QUẦN JEANS NỮ TRƠN</a></li>
+                                    <li><a href="CHITIETNU8.html">QUẦN JEANS NỮ RÁCH GỐI</a></li>
+                                </ul>
+                            </div>
+                        </li> 
+
+                        <li><button onClick="location.href='giohang.html'"><img src="PICTURES/giohang.png"></button></li>
+                        <li><button onClick="showform()"><img src="PICTURES/account.png"></button></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-9 menu">
+                    <ul>
+                        <li><img src="PICTURES/home.png"><a href="index.html"> Trang chủ</a></li>
+                        <li><img src="PICTURES/shirt.png"><a href=""> Sản phẩm</a>
+                            <ul class="menu-child">
+                                <li><a href="SANPHAMNAM.html">Sản Phẩm Nam</a></li>
+                                <li><a href="SANPHAMNU.html">Sản Phẩm Nữ</a></li>
+                            </ul>
+                        </li>
+                        <li><img src="PICTURES/information.png"><a href="gioithieu.html"> Giới thiệu</a></li>
+                        <li><img src="PICTURES/contact.png"><a href="lienhe.html"> Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+    </header>
+
+    </div>
+
+    <!-- LOGIN - SIGNUP -->
+    <div id="user" class="modal">
+        <div id="login">
+            <form id="loginform">
+                <button type="button" class="close" onClick="closeform()">+</button>
+                <h2>ĐĂNG NHẬP</h2>
+                <div class="logininfo">
+                    <div class="col">
+                        <label for="usernameLogin">Tên đăng nhập:</label>
+                        <input type="text" id="usernameLogin">
+                        <div id="usernameerror">Bạn chưa nhập tên đăng nhập</div>
+                        <label for="passwordLogin">Mật khẩu:</label>
+                        <input type="password" id="passwordLogin">
+                        <div id="passwordloginerror">Bạn chưa nhập mật khẩu</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnlogin">Login</button>
+                <p>Bạn chưa có tài khoản? <a href="#" onClick="showSignUp()">Đăng ký</a></p>
+            </form>
+        </div>
+        <div id="signup">
+            <form id="signupform">
+                <button type="button" class="close" onClick="closeform()">+</button>
+                <h2>ĐĂNG KÝ</h2>
+                <div class="signupinfo">
+                    <div class="col">
+                        <label for="fullname">Họ và tên: </label>
+                        <input type="text" id="fullname">
+                        <div id="fullnameerror">Bạn chưa nhập họ tên</div>
+                        <label for="address">Địa chỉ: </label>
+                        <input type="text" id="address">
+                        <div id="addresserror">Bạn chưa địa chỉ</div>
+                        <label for="phone">Số điện thoại: </label>
+                        <input type="text" id="phone">
+                        <div id="phoneerror">Bạn chưa nhập số điện thoại</div>
+                    </div>
+                    <div class="col">
+                        <label for="usernameSignUp">Tên đăng nhập: </label>
+                        <input type="text" id="usernameSignUp">
+                        <div id="usererror">Bạn chưa nhập tên đăng nhập</div>
+                        <label for="passwordSignUp">Mật khẩu: </label>
+                        <input type="password" id="passwordSignUp">
+                        <div id="passworderror">Bạn chưa nhập mật khẩu</div>
+                        <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                        <input type="password" id="passwordSignUp2">
+                        <div id="password2error">Mật khẩu không trùng khớp</div>
+                    </div>
+                </div>
+                <button type="submit" id="btnsignup">Đăng ký</button>
+                <p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div> 
+
+    <div class="mySlides fade">
+        <a href="SANPHAMDOI.html"><img src="PICTURES/slide1.jpg" style="width:100%"></a>
+    </div>
+
+    <div class="mySlides fade">
+        <a href="SANPHAMNAM.html"><img src="PICTURES/slide2.jpg" style="width:100%"></a>
+    </div>
+    <div class="mySlides fade">
+        <a href="SANPHAMNU.html"><img src="PICTURES/slide3.jpg" style="width:100%"></a>
+    </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+    <div class="sale">
+        <h3>SIÊU SALE THÁNG 12</h3>
+    </div>
+    <ul class="product">
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="PICTURES/sale1.jpg" alt="">
+                    </a>
+                    <!-- Mua ngay -->
+                    <a href="" class="buy-now">SALE 20%</a>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Hàng chất lượng</a>
+                        <a href="" class="product-name">Áo khoác bomer nữ hot 2021</a>
+                        <div class="product-price">Chỉ còn 340.000đ</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="PICTURES/sale2.jpg" alt="">
+                    </a>
+                    <!-- Mua ngay -->
+                    <a href="" class="buy-now">SALE 20%</a>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Hàng chất lượng</a>
+                        <a href="" class="product-name">Sơ mi nam </a>
+                        <div class="product-price"> Chỉ còn 260.000đ</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="PICTURES/sale3.jpg" alt="">
+                    </a>
+                    <!-- Mua ngay -->
+                    <a href="" class="buy-now">SALE 20%</a>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Hàng chất lượng</a>
+                        <a href="" class="product-name">Sơ mi nam</a>
+                        <div class="product-price"> Chỉ còn 260.000đ</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="product-item">
+                <div class="product-top">
+                    <a href="" class="product-thumb">
+                        <img src="PICTURES/sale4.jpg" alt="">
+                    </a>
+                    <!-- Mua ngay -->
+                    <a href="" class="buy-now">SALE 20%</a>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Hàng chất lượng</a>
+                        <a href="" class="product-name">Sweater nam nữ</a>
+                        <div class="product-price">Chỉ còn 300.000d</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    </div>
+
+    <div id="backtop">
+        <i class="fas fa-chevron-up"></i>
+
+    </div>
+
+    <div class="footer">
+        <div class="footertop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 cot1">
+                        <div class="motdong">
+                            <i class="fa fa-paper-plane-o"></i>
+                            <span class="textmotdong">Address: SaiGon University</span>
+                        </div>
+                        <div class="motdong">
+                            <i class="fa fa-phone"></i>
+                            <span class="textmotdong">Phone: 3120410280</span>
+                        </div>
+                        <div class="motdong">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="textmotdong">Email: lynhnguyen1234562gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 cot3">
+                        <h2 class="tdfooter">HỖ TRỢ THANH TOÁN</h2>
+                        <ul>
+                            <li>
+                                <p>MasterCard</p>
+                            </li>
+                            <li>
+                                <p>Visa</p>
+                            </li>
+                            <li>
+                                <p>Thẻ tín dụng</p>
+                            </li>
+                            <li>
+                                <p>Tiền mặt</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-3 cot4">
+                        <h2 class="tdfooter">Opening Hours</h2>
+                        <div class="opening1">
+                            <div class="trai">Mon - Fri: 9:00am - 23:00pm</div>
+                        </div>
+                        <div class="opening1">
+                            <div class="trai">Saturday: 10:00am - 22:00pm</div>
+                        </div>
+                        <div class="opening1">
+
+                            <div class="trai">Sunday: 10:00am - 21:00pm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end footertop -->
+        <div class="footerbottom">
+            <p>Nguyen Thi Nha Linh - Trinh Quang Long - Nguyen Phan Huy Luong </p>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="login-signup.js"></script>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop()) {
+                $('#backtop').fadeIn();
+            } else {
+                $('#backtop').fadeOut();
+            }
+        });
+        $("#backtop").click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 500);
+        });
+    });
+
+
+    //khai báo biến slideIndex đại diện cho slide hiện tại
+    var slideIndex;
+    // KHai bào hàm hiển thị slide
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].className += " active";
+        //chuyển đến slide tiếp theo
+        slideIndex++;
+        //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+        if (slideIndex > slides.length - 1) {
+            slideIndex = 0
+        }
+        //tự động chuyển đổi slide sau 5s
+        setTimeout(showSlides, 5000);
+    }
+    //mặc định hiển thị slide đầu tiên 
+    showSlides(slideIndex = 0);
+
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+</script>
+<script src="thanhtimkiem.js" type="text/javascript"></script>
+
+</html>

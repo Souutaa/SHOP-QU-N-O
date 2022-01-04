@@ -1,0 +1,674 @@
+* {
+  margin: 0;
+  /*giảm khoảng cách giữa các phần tử: top, right, bottom, left*/
+  padding: 0;
+  /*thuộc tính tạo khoảng trống giữa phần tử cha và phần tử con. */
+  box-sizing: border-box
+}
+
+
+body {
+  background-color: #f1f1f1;
+  line-height: 1.2;
+}
+
+header {
+  background-image: url(PICTURES/head.jpg);
+  padding: 10px 0 10px 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  /*tự động căn chỉnh vị trí, khoảng cách giữa các phần tử mặc dù chưa được quy định kích thước  */
+  max-width: 100%;
+  flex-wrap: wrap;
+  /*flex item sẽ tự động tách dòng, từ trên xuống dưới.*/
+  margin-left: -15px;
+  /*giảm khoảng cách giữa các phần tử*/
+  margin-right: -15px;
+  /*giảm khoảng cách giữa các phần tử*/
+}
+
+
+.container a {
+  text-decoration: none;
+  color: #252424;
+  font-size: 20px;
+}
+
+.col-2 {
+  flex: 0 0 20%;
+  max-width: 25%;
+}
+
+.col-2 img {
+  margin-right: 20px;
+  max-width: 200px;
+}
+
+.col-8 {
+  flex: 0 0 80%;
+  max-width: 80%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.col-8 li {
+  padding: 0px 10px;
+}
+
+.col-8 li button {
+  background: none;
+  border: white;
+  height: 25px;
+  cursor: pointer;
+}
+
+.col-8 li img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+/*User*/
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+#login {
+  width: 500px;
+  background-color: #fff;
+  margin: 100px auto 0 auto;
+  padding-bottom: 20px;
+  animation: topdown 0.7s;
+  position: relative;
+}
+
+#login .close {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  font-size: 35pt;
+  transform: rotate(45deg);
+  background-color: transparent;
+  cursor: pointer;
+  border: white;
+}
+
+#login .close:hover {
+  color: #ff4700;
+}
+
+#login h2 {
+  font-family: "Times New Roman";
+  display: inline-block;
+  margin: 20px 0 10px 40px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #000;
+  font-weight: 900;
+}
+
+#login .logininfo {
+  display: flex;
+  justify-content: center;
+}
+
+#login label {
+  display: block;
+  font-weight: bold;
+  font-size: 13pt;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#login input {
+  display: inline-block;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13pt;
+  outline: none;
+}
+
+#login input:focus {
+  border: 1px solid #ff4700;
+}
+
+#login div[id*="error"] {
+  width:100%;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
+  font-weight: bold;
+  margin: 0 auto;
+  cursor: default;
+}
+
+#login #btnlogin {
+  display: block;
+  background-color: #ff4700;
+  width: 200px;
+  height: 40px;
+  border: 3px solid #ff4700;
+  margin: 50px auto 0;
+  font-size: 20pt;
+  line-height: 30px;
+  color: white;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .7);
+}
+
+#login p {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#login p a {
+  text-decoration: none;
+  color: #ff4700;
+  font-weight: bold;
+}
+
+#login #btnlogin:hover {
+  background-color: #fff;
+  color: #ff4700;
+}
+
+#login #btnlogin:active {
+  box-shadow: none;
+}
+
+#signup {
+  width: 700px;
+  background-color: #fff;
+  margin: 100px auto 0 auto;
+  padding-bottom: 20px;
+  animation: topdown 0.7s;
+  position: relative;
+  display: none;
+}
+
+#signup .close {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  font-size: 35pt;
+  transform: rotate(45deg);
+  background-color: transparent;
+  cursor: pointer;
+  border: white;
+}
+
+#signup .close:hover {
+  color: #ff4700;
+}
+
+#signup .signupinfo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#signup .col {
+  width: 50%;
+  padding: 0 50px;
+}
+
+#signup h2 {
+  font-family: "Times New Roman";
+  display: inline-block;
+  margin: 20px 0 10px 40px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #000;
+  font-weight: 900;
+}
+
+#signup label {
+  display: block;
+  font-weight: bold;
+  font-size: 13pt;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#signup input {
+  display: inline-block;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  margin-left: -14px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13pt;
+  outline: none;
+}
+
+#signup input:focus {
+  border: 1px solid #ff4700;
+}
+
+#signup div[id*="error"] {
+  width: 100%;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
+  font-weight: bold;
+  margin:  0px -15px;
+  padding: 5px;
+  display: none;
+  cursor: default;
+}
+
+#signup #btnsignup {
+  display: block;
+  background-color: #ff4700;
+  width: 200px;
+  height: 40px;
+  border: 3px solid #ff4700;
+  margin: 50px auto 0;
+  font-size: 20pt;
+  line-height: 30px;
+  color: white;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .7);
+}
+
+#signup p {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#signup p a {
+  text-decoration: none;
+  color: #ff4700;
+  font-weight: bold;
+}
+
+#signup #btnsignup:hover {
+  background-color: #fff;
+  color: #ff4700;
+}
+
+#signup #btnsignup:active {
+  box-shadow: none;
+}
+
+
+
+#myUL {
+  z-index: 9999;
+  background-color: #f1f2f6;
+  position: absolute;
+  list-style-type: none;
+  display: none;
+  padding: 10px 0;
+  margin-top: 27px;
+  margin-left: -46px;
+}
+
+
+#myUL li {
+  width: 100%;
+  margin: 2px;
+  padding: 0px 20px;
+}
+
+#myUL li a {
+  padding-top: 7px;
+  border-bottom: 1px solid black;
+  float: flex;
+  text-decoration: none;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+
+}
+
+#myUL li a:hover {
+  color: #1e272e;
+}
+
+input[type=text] {
+  float: right;
+  width: 100%;
+  padding: 7px 40px;
+  margin-bottom: 8px;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  margin-top: -10px;
+  padding-top: 20px;
+}
+
+.col-9 li {
+  text-align: center;
+  padding: 5px 80px;
+}
+
+.col-9 li img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.menu ul li {
+  float: left;
+  /*để các phần tử liền nhau. "left": thiết lập phần tử HTML trôi về trái*/
+  margin-left: 20px;
+  list-style: none;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  /*-xác định cách trình duyệt phân phối không gian giữa 
+    và xung quanh các mục nội dung dọc theo trục chính của vùng chứa linh hoạt và trục nội tuyến của vùng chứa lưới.
+    -flex-end thì giống với float-right, nó căn các phần tử về phía bên phải*/
+}
+
+.menu-child {
+  /* border: 1px solid black; */
+  position: absolute;
+  background-image: url(PICTURES/head.jpg); 
+  width: 200px;
+  z-index: 99;
+
+}
+
+.menu-child li {
+  display: none;
+  padding: 10px 0 0 0;
+  float: none;
+  padding-bottom: 10px;
+}
+
+.menu-child li a {
+  color: black;
+}
+
+.menu ul li:hover .menu-child li {
+  display: block;
+}
+
+#body {
+  box-sizing: border-box
+}
+
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Ẩn các slider */
+.mySlides {
+  display: none;
+}
+
+/* định dạng các chấm chuyển đổi các slide */
+.dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* khi được hover, active đổi màu nền */
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Thêm hiệu ứng khi chuyển đổi các slide */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.mySlides img {
+  width: 1000px;
+  height: 600px;
+}
+
+.sale {
+  text-align: center;
+  margin: 40px 0px;
+
+}
+
+ul.product {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*dàn khung hiển thị hàng ngang */
+}
+
+ul.product li {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  flex-basis: 25%;
+  box-sizing: border-box;
+}
+
+ul.product li img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul.product li .product-top {
+  position: relative;
+  overflow: hidden;
+}
+
+ul.product li .product-top .product-thumb {
+  display: block;
+}
+
+ul.product li .product-top .product-thumb img {
+  display: block;
+}
+
+ul.product li .product-top a.buy-now {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: none;
+  background-color: #1282bace;
+  color: #fff;
+  padding: 10px 0px;
+  position: absolute;
+  width: 100%;
+  transition-delay: 0.5s ease-in-out;
+}
+
+ul.product li:hover a.buy-now {
+  bottom: 78px;
+  display: block;
+}
+
+ul.product li .product-info {
+  padding: 10px 0px;
+}
+
+ul.product li .product-info a {
+  display: block;
+  text-decoration: none;
+}
+
+ul.product li .product-info a.product-cat {
+  font-size: 11px;
+  text-decoration: none;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  padding: 3px 0px;
+}
+
+ul.product li .product-info a.product-name {
+  color: #334862;
+  padding: 3px 0px;
+}
+
+ul.product li .product-info .product-price {
+  color: #111;
+  padding: 2px 0px;
+  font-weight: 600;
+}
+
+#backtop {
+  width: 40px;
+  height: 40px;
+  background-color: tomato;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.footerbottom {
+  background: #111111;
+  line-height: 91px;
+  height: 91px;
+  text-align: center;
+  font-family: roboto slab;
+  font-size: 13px;
+  color: #999;
+}
+
+.opening1 .trai {
+  background: #151515;
+  float: left;
+  transform: translateY(10px);
+  padding-right: 70px;
+  font-family: roboto slab;
+}
+
+.opening1 {
+  border-bottom: 1px dashed #656060;
+  height: 50px;
+  margin-bottom: 20px;
+  margin-top: -8px;
+}
+
+.cot3 {
+  padding-left: 200px;
+}
+
+.cot4 {
+  padding-left: 200px;
+}
+
+.cot2 ul li a,
+.cot3 ul li a {
+  color: #888;
+  font-size: 14px;
+  font-family: roboto slab;
+  line-height: 28px;
+}
+
+.cot2 ul li a:hover,
+.cot3 ul li a:hover {
+  text-decoration: none;
+  transition: 0.4s;
+  color: #ffffffb0;
+}
+
+h2.tdfooter {
+  font-size: 14px;
+  color: #ccc;
+  font-family: roboto slab;
+  position: relative;
+  padding-top: 17px;
+  padding-bottom: 29px;
+}
+
+h2.tdfooter:after {
+  content: "";
+  display: block;
+  background: #feb518;
+  height: 1px;
+  width: 32px;
+  top: 38px;
+  position: absolute;
+}
+
+h3.tdfooter {
+  padding: 15px 31px;
+  font-size: 20px;
+}
+
+.motdong i {
+  padding-right: 40px;
+  padding-bottom: 20px;
+  color: #ffffffc7;
+  float: left;
+  padding-top: 7px;
+}
+
+.motdong {
+  overflow: hidden;
+}
+
+.footertop {
+  width: 100%;
+  background: #151515;
+  line-height: 24px;
+  font-size: 14px;
+  color: #888;
+  padding-top: 113px;
+  padding-bottom: 100px;
+  margin-top: 50px;
+}
